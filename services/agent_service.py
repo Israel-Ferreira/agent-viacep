@@ -41,7 +41,7 @@ def consultar_cep(query):
     content = response.json()
 
 
-    return  f"Bairro: {content.get('bairro')}, Cidade: {content.get('localidade')}, Estado: {content.get('uf')}"
+    return  content
 
 
 
@@ -87,7 +87,7 @@ def execute_agent(payload: dict):
     print(f"Resposta do agente: {resposta_agente}")
 
 
-    return ""
+    return resposta_agente['messages'][-1].content
 
 
 
